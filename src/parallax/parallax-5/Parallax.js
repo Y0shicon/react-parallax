@@ -39,12 +39,12 @@ const gsapInit = () => {
       onComplete: () => (animating = false),
     });
     tl.fromTo(
-      [outerWrappers[1], innerWrappers[1]],
+      [outerWrappers[1]],
       { yPercent: 100 },
       { yPercent: 0 },
       0
     ).fromTo(
-      [outerWrappers[0], innerWrappers[0]],
+      [outerWrappers[0]],
       { yPercent: 0 },
       { yPercent: -100 },
       0
@@ -69,12 +69,12 @@ const gsapInit = () => {
     });
 
     tl.fromTo(
-      [outerWrappers[1], innerWrappers[1]],
+      [outerWrappers[1]],
       { xPercent: 0 },
       { xPercent: -100 },
       0
     ).fromTo(
-      [outerWrappers[2], innerWrappers[2]],
+      [outerWrappers[2]],
       { xPercent: 100 },
       { xPercent: 0 },
       0
@@ -97,6 +97,7 @@ const gsapInit = () => {
 
   const gotoSection = (index, direction) => {
     if (index < 0) return;
+    if (index > sections.length-1) return;
     animating = true;
     let fromTop = direction === -1,
     dFactor = fromTop ? -1 : 1;
